@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Emotion Snapshot</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <%- include('./partials/_navbar', { isAuthenticated: true }) %>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Create Emotion Snapshot</h1>
+            <form action="/snapshot/create" method="POST">
+                <div class="field">
+                    <label class="label">Enjoyment Level</label>
+                    <div class="control">
+                        <input class="input" type="number" name="enjoymentLevel" required>
+                    </div>
+                </div>
+                <!-- Add fields for other emotion levels -->
+                <!-- For example: -->
+                <!-- <div class="field">
+                    <label class="label">Sadness Level</label>
+                    <div class="control">
+                        <input class="input" type="number" name="sadnessLevel" required>
+                    </div>
+                </div> -->
+                <!-- Repeat for other emotion levels -->
+                <div class="field">
+                    <label class="label">Timestamp</label>
+                    <div class="control">
+                        <input class="input" type="datetime-local" name="timestamp" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Notes</label>
+                    <div class="control">
+                        <textarea class="textarea" name="notes" required></textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary" type="submit">Create Snapshot</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

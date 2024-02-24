@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <style>
+        /* Add custom styles here */
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <%- include('./partials/_navbar', { isAuthenticated: isAuthenticated }) %>
+
+    <% if (locals.hasOwnProperty('success')) { %>
+        <div class="notification is-success">
+            <%= success %>
+        </div>
+    <% } %>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Login Here</h1>
+            <form action="/signin" method="POST">
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Enter your username" name="username" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control">
+                        <input class="input" type="password" placeholder="Enter your password" name="password" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary" type="submit">Log in</button>
+                    </div>
+                </div>
+            </form>
+            <div class="has-text-centered">
+                <a href="/forgot-password">Forgotten password?</a>
+            </div>
+            <div class="has-text-centered">
+                <a href="/signup">Create new account</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

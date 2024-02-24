@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <!-- Include Bulma CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+</head>
+<body>
+  <!-- Include the navigation bar partial -->
+  <%- include('./partials/_navbar', { isAuthenticated: isAuthenticated }) %>
+
+  <section class="section">
+    <div class="container">
+      <!-- Sign up form -->
+      <h1 class="title">Sign Up</h1>
+      <form action="/signup" method="POST">
+        <!-- Form fields for username -->
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control">
+              <input class="input" type="text" placeholder="Enter your username" name="username" required>
+          </div>
+      </div>
+        <!-- Form fields for first name -->
+        <div class="field">
+          <label class="label">First Name</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="First Name" name="firstName" required>
+          </div>
+        </div>
+        
+        <!-- Form fields for last name -->
+        <div class="field">
+          <label class="label">Last Name</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Last Name" name="lastName" required>
+          </div>
+        </div>
+        
+        <!-- Form fields for email -->
+        <div class="field">
+          <label class="label">Email Address</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="Email Address" name="email" required>
+          </div>
+        </div>
+        
+        <!-- Form fields for password -->
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="Password" name="password" required>
+          </div>
+        </div>
+
+        <!-- Form fields for terms and conditions -->
+        <div class="field">
+          <div class="control">
+              <label class="checkbox">
+                  <input type="checkbox" name="agreeTerms">
+                  I agree to the Terms and Conditions
+              </label>
+          </div>
+      </div>
+        
+        <!-- Sign up button -->
+        <div class="field">
+          <div class="control">
+            <button class="button is-primary" type="submit">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- views/home.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Include Bulma CSS from CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- Other meta tags, scripts, or stylesheets -->
+</head>
+<body>
+    <!-- Navbar -->
+    <%- include('./partials/_navbar', { isAuthenticated: isAuthenticated }) %>
+    
+    <!-- Main content -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Welcome to Emotion Tracking App</h1>
+            <p class="subtitle">Record and track your emotions with ease.</p>
+        </div>
+    </section>
+
+    <!-- Other common components or scripts -->
+</body>
+</html>

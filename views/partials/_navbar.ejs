@@ -1,0 +1,38 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/path/to/logo.png" alt="Logo">
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">Home</a>
+        <a class="navbar-item" href="/record">Record</a>
+        <a class="navbar-item" href="/history">History</a>
+        <a class="navbar-item" href="/trends">Trends</a>
+      </div>
+      <div class="navbar-end">
+      <!-- Conditional rendering based on session -->
+        <% if (isAuthenticated) { %>
+        <!-- Display these items if user is logged in -->
+          <div class="navbar-item">
+            <form action="/signout" method="GET">
+              <button type="submit" class="button is-danger">Sign Out</button>
+            </form>
+          </div>
+        <% } else { %>
+          <div class="navbar-item">
+            <a class="button is-primary" href="/signin">Sign In</a>
+          </div>
+          <div class="navbar-item">
+            <a class="button is-light" href="/signup">Sign Up</a>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </nav>
